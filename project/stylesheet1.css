@@ -1,0 +1,123 @@
+
+html{
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+    min-height: 100vh;
+    background-color: #fdecec;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+header {
+    display:flex;
+    justify-content: flex-start;
+    gap:20px;
+     background-color: #b30000;
+     color:white;
+     position:sticky;
+     top:0;
+     padding:4px;
+}
+.head ul  {  
+     display:flex;
+    justify-content:"first baseline";
+    gap:30px; 
+    list-style: none;
+}
+.head ul li a{
+   color:white;
+    text-decoration: none;
+    font-size: 25px;
+}
+.head ul li input{ background-color: #ffffff;
+    border:2px solid #b30000;
+    color:#333;
+    padding:8px 12px;
+    border-radius: 4px;
+
+}
+.logo{
+    width:20px;
+    height:auto;
+}
+.intro{
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.6); /* TRANSPARENT */
+    border-radius: 12px;
+}
+.donating{ 
+    display: flex;
+    align-items: center;        /* vertically center */
+    justify-content: space-between;
+    gap: 30px;
+    background-color: rgba(255, 255, 255, 0.6); /* TRANSPARENT */
+    border-radius: 12px;
+
+}
+.donating p{
+    flex: 1;
+    text-align: left;
+}
+
+.image{
+    width: 300px;   
+    height:auto;         
+   
+}
+
+.donate-section{
+    display: flex;
+    justify-content: center;  
+    align-items: center;     
+    width: 100%;
+}
+
+form{
+    width: 50%;            
+    max-width: 500px;
+    margin:20px auto;
+    background-color:  rgba(255, 255, 255, 0.6); 
+     border-radius: 12px;
+     padding: 20px;
+}
+
+label{
+    display: block;
+    margin-top: 8px;
+    font-size: 14px;
+
+}
+input{
+    width :100%;
+    padding: 6px;
+    margin-top: 4px;
+}
+button{
+    background-color: green;
+    padding: 10px 225px;
+    margin: 4px;
+    font-size: 17px;
+}
+.donarcard{
+    display: flex;
+    gap:20px;
+   
+}
+.card{
+     background-color: rgba(255, 255, 255, 0.6) ;
+    margin:20px auto;
+    padding:20px 20px;
+}
+.image1{
+    width: 100px;   
+    height:auto;         
+}
+.contact{
+    text-align: center;
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 14px;
+} 
