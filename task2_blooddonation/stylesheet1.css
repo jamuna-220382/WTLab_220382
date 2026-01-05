@@ -234,3 +234,13 @@ textarea:focus{
     width: 100%;
   }
 }
+.tab {display:flex;
+    justify-content: center;
+  border-collapse: collapse;
+  background-color: rgba(255, 255, 255, 0.6);  
+}
+
+.tab td,
+.tab th {
+  border: 1px solid black;
+}
