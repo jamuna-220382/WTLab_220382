@@ -1,0 +1,325 @@
+<?php
+session_start();
+
+$env = parse_ini_file('.env');
+
+$client_id = $env['CLIENT_ID'];
+$redirect_uri = $env['REDIRECT_URI'];
+
+$auth_uri = "https://accounts.google.com/o/oauth2/v2/auth?" . http_build_query([
+    'client_id' => $client_id,
+    'redirect_uri' => $redirect_uri,
+    'response_type' => 'code',
+    'scope' => 'https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email',
+    'access_type' => 'offline',
+    'prompt' => 'consent'
+]);
+?>
+
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>
+            blood donation
+       </title>
+   <link rel="stylesheet" href="stylesheet1.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    </head>
+    <body>
+        <header>
+            <div>
+            <h1>LIFE DROP<img src="c:\Users\Jamuna potnuru\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\sessions\2274724D033CAB13A7C006BC0B0FCE597925469C\transfers\2025-51\WhatsApp Image 2025-12-18 at 6.50.03 PM.jpeg" class="logo"></h1>
+            </div>
+            <div class="head">
+            <ul>
+                <li><input type="text" placeholder="search for availibity of blood group"></li>
+                <li><a href="#introduction">About Us</a></li>
+                <li><a href="#donate">Why To Donate</a></li>
+                <li><a href="#donars">Donars</a></li>
+                <li><a href="#hospital">Hospitals</a></li>
+                <li><a href="#bloodbank">Bloodbanks</a></li>
+                <li> 
+<?php if(!isset($_SESSION['username'])){ ?>
+    <a href="<?php echo $auth_uri; ?>">login with google</a>
+<?php } else { ?>
+    <a href="register.html">register</a>
+<?php } ?>
+</li>
+
+            </ul>
+            </div>
+        </header>
+        <section id="introduction" >
+            <h2><b>About Us</b></h2>
+            <div class="intro"><p>Life Drop is a blood donation support platform designed to help save human lives.
+It acts as a bridge between blood donors, hospitals, and blood banks.
+The main aim of Life Drop is to make blood available quickly during emergencies.
+In many critical situations, patients lose their lives due to the unavailability of blood.
+Life Drop tries to reduce this problem by providing a common platform.
+
+The website allows donors to register and share their blood group details.
+These details can be accessed when there is an urgent need for blood.
+Hospitals can use the platform to find suitable donors easily.
+Blood banks can update information about available blood units.
+This helps in reducing delays during emergency situations.
+
+Life Drop focuses on promoting voluntary blood donation.
+Many people are willing to donate blood but do not know where to donate.
+This platform guides such people and motivates them to become donors.
+It spreads awareness about the importance of regular blood donation.
+The website also educates users about how one donation can save multiple lives.</p>
+<p>
+In accidents, surgeries, and medical treatments, blood is often required urgently.
+Life Drop helps patients and their families during such stressful times.
+By providing donor and blood bank information, it saves valuable time.
+The platform helps in locating nearby hospitals and blood banks.
+This improves the chances of survival for patients in critical condition.
+
+Life Drop also supports rare blood group requirements.
+Finding rare blood groups is difficult during emergencies.
+This platform helps identify donors with rare blood groups quickly.
+It reduces panic and confusion during urgent medical needs.
+
+The website is designed to be simple and user-friendly.
+Even non-technical users can easily navigate through the platform.
+Clear sections are provided for donors, hospitals, and blood banks.
+Emergency contact details are displayed for quick access.
+
+Life Drop encourages a culture of humanity and social responsibility.
+It reminds people that donating blood is a noble act.
+The platform builds trust between donors and medical institutions.
+It supports healthcare systems by improving blood availability.
+
+Overall, Life Drop is a life-saving digital solution.
+It uses technology to serve society in a meaningful way.
+The platform aims to reduce blood shortages in hospitals.
+It creates awareness, connects people, and saves lives.
+Life Drop stands as a symbol of hope during medical emergencies.</p></div>
+        </section>
+        <Section id="donate">
+            
+               <h2><i class="fa-solid fa-hand-holding-heart"></i> Why Donate Blood?</h2>
+             <div class="donating">
+                <div class="donate-why">
+            <p> Blood is the most precious gift that anyone can give to another person — the gift of life. 
+            A decision to donate your blood can save a life, or even several if your blood is separated 
+            into its components — red cells, platelets and plasma — which can be used individually for 
+            patients with specific conditions. Safe blood saves lives and improves health.
+            Blood transfusion is needed for:
+            <ul>
+                <li>Women with complications of pregnancy</li>
+                <li>Children with severe anaemia</li>
+                <li>People with severe trauma</li>
+                <li>Major surgeries and cancer treatment</li>
+            </ul>
+                It is also required for patients with thalassaemia, sickle cell disease and haemophilia.
+                Since blood can be stored only for a limited time, regular donations are essential to
+                ensure availability whenever and wherever needed.
+            </p></div>
+            <div class="image-why">
+             <img src="c:\Users\Jamuna potnuru\Documents\html\labs\project\whytodonate.jpeg" class="image">
+            </div>
+            </div>
+            <div>
+              <h2>iframe insertion</h2>
+              <iframe src="c:\Users\Jamuna potnuru\Documents\bonafide.pdf" allow="autoplay" width="100%" height="400"></iframe>
+            </div>
+            <div>
+              <h2>Video Insertion</h2>
+              <video width="500"  controls><source src="C:\Users\Jamuna potnuru\Documents\html\repo1\WTLab_220382\task2_blooddonation\images\numpy1.ipynb - Colab - Google Chrome 2025-09-12 15-45-08.mp4" type="video/mp4"></video>
+            </div>
+            <div>
+              <h2>Audio Insertion</h2>
+              <audio controls><source src="C:\Users\Jamuna potnuru\Documents\html\repo1\WTLab_220382\task2_blooddonation\images\titanic-collision-34260.mp3" type="audio/mpeg"></audio>
+            </div>
+            </Section>
+            <section class="donate-Section">   
+            <div>
+                 <form>
+            <h2><b><i class="fa-solid fa-user-plus"></i>Donate Form</b></h2>
+        <label>Name</label>
+        <input type="text"  id="dname">
+        <br>
+        <label>Age</label>
+        <input type="number">
+        <br>
+        <label>Blood Group</label>
+        <input type="text" id="dblood">
+        <br>
+        <label>City</label>
+        <input type="text">
+        <br>
+        <label>Phone Number</label>
+        <input type="number">
+        <br><br>
+        <p id="donarcount">Total Donors: 2</p>
+        <br><br>
+        <button type="button" onclick="increaseDonor()">Add Donor</button>
+        
+    </form>
+
+    <h3>Donor Availability</h3>
+     <p id="donorStatus"></p>
+
+<button type="button" onclick="donor.toggleAvailability()">
+  Toggle Availability
+</button>
+
+    
+<section id="forms">
+   <form class="lab2-form">
+    <h2><i class="fa-solid fa-droplet"></i> Hospital Blood Request</h2>
+
+    <label>Hospital Name</label>
+    <input type="text" placeholder="Hospital name">
+
+    <label>Required Blood Group</label>
+    <select>
+      <option>Select</option>
+      <option>O+</option>
+      <option>O-</option>
+      <option>A+</option>
+      <option>B+</option>
+    </select>
+
+    <label>Urgency Level</label>
+    <label><input type="radio" name="urgency"> Normal</label>
+    <label><input type="radio" name="urgency"> Emergency</label>
+
+    <label>Message</label>
+    <textarea placeholder="Additional details"></textarea>
+
+    <button type="submit">Request Blood</button>
+  </form>
+
+</section>
+            </div>
+        </section>
+        
+        <Section id="donars">
+            <h2><i class="fa-solid fa-user-group"></i> Some Of The Donars</h2>
+            <div class="donarcard">
+            <div class="card">
+                <p><img src="c:\Users\Jamuna potnuru\Documents\html\labs\project\ChatGPT Image Dec 19, 2025, 12_12_53 AM.png" class="image1"></p>
+                <p><b>Name:</b>RAviKumar</p>
+                <p><b>Blood Group:</b>O+</p>
+                <p><b>City:</b>Srikakulam</p>
+                <p><b>Contact:</b>993265105</p>
+            </div>
+            <div class="card">
+                <p><img src="c:\Users\Jamuna potnuru\Documents\html\labs\project\ChatGPT Image Dec 19, 2025, 12_12_53 AM.png" class="image1"></p>
+                <p><b>Name:</b>Rashmi</p>
+                <p><b>Blood Group:</b>O-</p>
+                <p><b>City:</b>vizag</p>
+                <p><b>Contact:</b>993265105</p>
+            </div>
+            </div>
+            <div>
+              <h2> Donars list</h2>
+              <table class="tab" id="donorTable">
+                <tr>
+                <th>date</th>
+                <th>sno</th>
+                <th>name</th>
+                <th >blood group</th>
+                </tr>
+                <tr>
+                  <td rowspan="2">4-1-2026</td>
+                  <td>1</td>
+                  <td>ravikumar</td>
+                  <td>o+</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>rashmi</td>
+                  <td>o-</td>
+                </tr>
+                  <tr>
+                  <td rowspan="2">5-1-2026</td>
+                  <td>3</td>
+                  <td>rasi</td>
+                  <td>o+</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>anuc</td>
+                  <td>b+</td>
+                </tr>
+              </table>
+            </div>
+        </Section>
+        <section id="hospital">
+  <h2><i class="fa-solid fa-hospital"></i> Hospitals</h2>
+<div class="donarcard">
+  <div class="card">
+    <p><img src="C:\Users\Jamuna potnuru\Documents\html\repo1\WTLab_220382\task2_blooddonation\images\images.png" class="image1"></p>
+    <p><b>Name:</b> City Care Hospital</p>
+    <p><b>City:</b> Srikakulam</p>
+    <p><b>Blood Bank:</b> Available</p>
+    <p><b>Contact:</b> 9000000001</p>
+  </div>
+
+  <div class="card">
+    <span class="badge">Available</span>
+    <p><img src="C:\Users\Jamuna potnuru\Documents\html\repo1\WTLab_220382\task2_blooddonation\images\hospital.jpg" class="image1"></p>
+    <p><b>Name:</b> Apollo Hospital</p>
+    <p><b>City:</b> Visakhapatnam</p>
+    <p><b>Blood Bank:</b> Available</p>
+    <p><b>Contact:</b> 9000000002</p>
+  </div>
+</div>
+</section>
+<section id="bloodbank">
+  <h2>Blood Banks</h2>
+<div class="donarcard">
+  <div class="card">
+    <p><img src="C:\Users\Jamuna potnuru\Documents\html\repo1\WTLab_220382\task2_blooddonation\images\bloodbank.jpg" class="image1"></p>
+    <p><b>Name:</b> Red Cross Blood Bank</p>
+    <p><b>Blood Groups:</b> A+, A−, B+, O−</p>
+    <p><b>City:</b> Visakhapatnam</p>
+    <p><b>Contact:</b> 9111111111</p>
+  </div>
+
+  <div class="card">
+    <p><img src="C:\Users\Jamuna potnuru\Documents\html\repo1\WTLab_220382\task2_blooddonation\images\DSC_0109.png" class="image1"></p> 
+    <p><b>Name:</b> Government Blood Bank</p>
+    <p><b>Blood Groups:</b> O+, O−, AB+</p>
+    <p><b>City:</b> Srikakulam</p>
+    <p><b>Contact:</b> 9222222222</p>
+  </div>
+  </div>
+</section>
+<section id="contact">
+    <h2>Contact Us</h2>
+    
+    <div class="contact">
+      <p id="siteName"></p>
+        Email: <strong>lifedrop@gmail.com</strong><br>
+        Phone: <strong>+91 98765 43210</strong>
+    </div>
+</section>
+
+<script src="javascript.js"></script>
+
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
